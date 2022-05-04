@@ -1,0 +1,12 @@
+Source: ros-foxy-micro-ros-agent
+Section: misc
+Priority: optional
+Maintainer: Pablo Garrido <pablogarrido@eprosima.com>
+Build-Depends: debhelper (>= 9.0.0), ros-foxy-ament-cmake, ros-foxy-ament-cmake-gtest <!nocheck>, ros-foxy-ament-lint-auto <!nocheck>, ros-foxy-ament-lint-common <!nocheck>, ros-foxy-builtin-interfaces <!nocheck>, ros-foxy-micro-ros-msgs, ros-foxy-rcutils, ros-foxy-rmw, ros-foxy-rmw-dds-common, ros-foxy-rmw-fastrtps-shared-cpp, ros-foxy-rosidl-default-generators <!nocheck>, ros-foxy-rosidl-typesupport-fastrtps-cpp <!nocheck>, ros-foxy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-foxy-micro-ros-agent
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-foxy-micro-ros-msgs, ros-foxy-rcutils, ros-foxy-rmw, ros-foxy-rmw-dds-common, ros-foxy-rmw-fastrtps-shared-cpp, ros-foxy-ros-workspace
+Description: micro-ROS Agent package

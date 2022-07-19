@@ -43,7 +43,7 @@ ParticipantEntitiesInfoTypeSupport::ParticipantEntitiesInfoTypeSupport()
     ss << "dds_::" << message_name << "_";
     this->setName(ss.str().c_str());
 
-    bool full_bounded = true;
+    char full_bounded;
     m_typeSize = 4 + callbacks_->max_serialized_size(full_bounded);
 }
 
@@ -135,7 +135,7 @@ MicrorosGraphInfoTypeSupport::MicrorosGraphInfoTypeSupport()
     ss << "dds_::" << message_name << "_";
     this->setName(ss.str().c_str());
 
-    bool full_bounded = true;
+    char full_bounded;
     m_typeSize = 4 + callbacks_->max_serialized_size(full_bounded);
 }
 

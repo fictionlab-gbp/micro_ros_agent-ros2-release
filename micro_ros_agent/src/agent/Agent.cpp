@@ -79,14 +79,9 @@ bool Agent::create(
             {
                 auto graph_manager_ = find_or_create_graph_manager(participant->get_domain_id());
 
-                // TODO(jamoralp): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle =
-                    datawriter->get_instance_handle();
-                const eprosima::fastrtps::rtps::GUID_t datawriter_guid =
-                    iHandle2GUID(instance_handle);
-                graph_manager_->add_datawriter(datawriter_guid, participant, datawriter);
+                graph_manager_->add_datawriter(datawriter->guid(), participant, datawriter);
                 graph_manager_->associate_entity(
-                    datawriter_guid, participant, dds::xrce::OBJK_DATAWRITER);
+                    datawriter->guid(), participant, dds::xrce::OBJK_DATAWRITER);
             });
         xrce_dds_agent_instance_.add_middleware_callback(
             eprosima::uxr::Middleware::Kind::FASTDDS,
@@ -106,12 +101,7 @@ bool Agent::create(
 
                 auto graph_manager_ = find_or_create_graph_manager(participant->get_domain_id());
 
-                // TODO(jamoralp): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle =
-                    datawriter->get_instance_handle();
-                const eprosima::fastrtps::rtps::GUID_t datawriter_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle);
-                graph_manager_->remove_datawriter(datawriter_guid);
+                graph_manager_->remove_datawriter(datawriter->guid());
             });
 
         xrce_dds_agent_instance_.add_middleware_callback(
@@ -184,21 +174,15 @@ bool Agent::create(
             {
                 auto graph_manager_ = find_or_create_graph_manager(participant->get_domain_id());
 
-                // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dw =
-                    datawriter->get_instance_handle();
-                const eprosima::fastrtps::rtps::GUID_t datawriter_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dw);
-
-                graph_manager_->add_datawriter(datawriter_guid, participant, datawriter);
+                graph_manager_->add_datawriter(datawriter->guid(), participant, datawriter);
                 graph_manager_->associate_entity(
-                    datawriter_guid, participant, dds::xrce::OBJK_DATAWRITER);
+                    datawriter->guid(), participant, dds::xrce::OBJK_DATAWRITER);
 
                 // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dr =
+                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle =
                     datareader->get_instance_handle();
                 const eprosima::fastrtps::rtps::GUID_t datareader_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dr);
+                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle);
                 graph_manager_->add_datareader(datareader_guid, participant, datareader);
                 graph_manager_->associate_entity(
                     datareader_guid, participant, dds::xrce::OBJK_DATAREADER);
@@ -222,18 +206,13 @@ bool Agent::create(
             {
                 auto graph_manager_ = find_or_create_graph_manager(participant->get_domain_id());
 
-                // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dw =
-                    datawriter->get_instance_handle();
-                const eprosima::fastrtps::rtps::GUID_t datawriter_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dw);
-                graph_manager_->remove_datawriter(datawriter_guid);
+                graph_manager_->remove_datawriter(datawriter->guid());
 
                 // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dr =
+                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle =
                     datareader->get_instance_handle();
                 const eprosima::fastrtps::rtps::GUID_t datareader_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dr);
+                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle);
                 graph_manager_->remove_datareader(datareader_guid);
             });
 
@@ -256,20 +235,15 @@ bool Agent::create(
             {
                 auto graph_manager_ = find_or_create_graph_manager(participant->get_domain_id());
 
-                // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dw =
-                    datawriter->get_instance_handle();
-                const eprosima::fastrtps::rtps::GUID_t datawriter_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dw);
-                graph_manager_->add_datawriter(datawriter_guid, participant, datawriter);
+                graph_manager_->add_datawriter(datawriter->guid(), participant, datawriter);
                 graph_manager_->associate_entity(
-                    datawriter_guid, participant, dds::xrce::OBJK_DATAWRITER);
+                    datawriter->guid(), participant, dds::xrce::OBJK_DATAWRITER);
 
                 // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dr =
+                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle =
                     datareader->get_instance_handle();
                 const eprosima::fastrtps::rtps::GUID_t datareader_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dr);
+                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle);
                 graph_manager_->add_datareader(datareader_guid, participant, datareader);
                 graph_manager_->associate_entity(
                     datareader_guid, participant, dds::xrce::OBJK_DATAREADER);
@@ -293,18 +267,13 @@ bool Agent::create(
             {
                 auto graph_manager_ = find_or_create_graph_manager(participant->get_domain_id());
 
-                // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dw =
-                    datawriter->get_instance_handle();
-                const eprosima::fastrtps::rtps::GUID_t datawriter_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dw);
-                graph_manager_->remove_datawriter(datawriter_guid);
+                graph_manager_->remove_datawriter(datawriter->guid());
 
                 // TODO(pablogs): Workaround for Fast-DDS bug #9977. Remove when fixed
-                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle_dr =
+                const eprosima::fastrtps::rtps::InstanceHandle_t instance_handle =
                     datareader->get_instance_handle();
                 const eprosima::fastrtps::rtps::GUID_t datareader_guid =
-                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle_dr);
+                    eprosima::fastrtps::rtps::iHandle2GUID(instance_handle);
                 graph_manager_->remove_datareader(datareader_guid);
             });
 

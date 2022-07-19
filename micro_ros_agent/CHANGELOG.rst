@@ -2,16 +2,26 @@
 Changelog for package micro-ros_agent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.5.1 (2022-03-25)
+3.0.3 (2022-06-13)
 ------------------
-* Add services to graph manager (backport `#127 <https://github.com/micro-ROS/micro-ROS-Agent/issues/127>`_) (`#128 <https://github.com/micro-ROS/micro-ROS-Agent/issues/128>`_)
-* Add used missing includes (`#116 <https://github.com/micro-ROS/micro-ROS-Agent/issues/116>`_)
-* Add system logger flag (`#118 <https://github.com/micro-ROS/micro-ROS-Agent/issues/118>`_) (`#120 <https://github.com/micro-ROS/micro-ROS-Agent/issues/120>`_)
-* Add condition variable include (`#113 <https://github.com/micro-ROS/micro-ROS-Agent/issues/113>`_) (`#115 <https://github.com/micro-ROS/micro-ROS-Agent/issues/115>`_)
-* pass system name to xrceagent (`#110 <https://github.com/micro-ROS/micro-ROS-Agent/issues/110>`_) (`#111 <https://github.com/micro-ROS/micro-ROS-Agent/issues/111>`_)
-* Fix memory leak in FastDDS datawriter (`#107 <https://github.com/micro-ROS/micro-ROS-Agent/issues/107>`_) (`#108 <https://github.com/micro-ROS/micro-ROS-Agent/issues/108>`_)
+* Fix memory leak in graph manager (`#147 <https://github.com/micro-ROS/micro-ROS-Agent/issues/147>`_)
 
-1.5.0 (2021-09-13)
+3.0.2 (2022-05-25)
+------------------
+
+3.0.1 (2022-03-25)
+------------------
+* Add services to graph manager (`#127 <https://github.com/micro-ROS/micro-ROS-Agent/issues/127>`_) (`#129 <https://github.com/micro-ROS/micro-ROS-Agent/issues/129>`_)
+* Add used missing includes (`#116 <https://github.com/micro-ROS/micro-ROS-Agent/issues/116>`_) (`#124 <https://github.com/micro-ROS/micro-ROS-Agent/issues/124>`_)
+* Add system logger flag (`#118 <https://github.com/micro-ROS/micro-ROS-Agent/issues/118>`_) (`#119 <https://github.com/micro-ROS/micro-ROS-Agent/issues/119>`_)
+* Add condition variable include (`#113 <https://github.com/micro-ROS/micro-ROS-Agent/issues/113>`_) (`#114 <https://github.com/micro-ROS/micro-ROS-Agent/issues/114>`_)
+* pass system name to xrceagent (`#110 <https://github.com/micro-ROS/micro-ROS-Agent/issues/110>`_) (`#112 <https://github.com/micro-ROS/micro-ROS-Agent/issues/112>`_)
+* Fix memory leak in FastDDS datawriter (`#107 <https://github.com/micro-ROS/micro-ROS-Agent/issues/107>`_) (`#109 <https://github.com/micro-ROS/micro-ROS-Agent/issues/109>`_)
+
+3.0.0 (2021-09-13)
+------------------
+
+1.0.1 (2021-09-13)
 ------------------
 * Remove XRCE dependency and add superbuild (`#97 <https://github.com/micro-ROS/micro-ROS-Agent/issues/97>`_)
 * Fixed launch file by using a list for arguments. Ensures order of items is kept. (`#93 <https://github.com/micro-ROS/micro-ROS-Agent/issues/93>`_) (`#94 <https://github.com/micro-ROS/micro-ROS-Agent/issues/94>`_)

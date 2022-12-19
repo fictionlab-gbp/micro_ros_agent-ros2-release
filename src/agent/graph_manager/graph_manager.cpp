@@ -126,8 +126,10 @@ GraphManager::GraphManager(eprosima::fastdds::dds::DomainId_t domain_id)
     // Set graph cache on change callback function
     graphCache_.set_on_change_callback([this]()
     {
-        std::unique_lock<std::mutex> lock(this->mtx_);
-        this->graph_changed_ = true;
+        {
+            std::unique_lock<std::mutex> lock(this->mtx_);
+            this->graph_changed_ = true;
+        }
         this->cv_.notify_one();
     });
 
@@ -144,6 +146,7 @@ inline void GraphManager::publish_microros_graph()
             {
                 return this->graph_changed_;
             });
+            graph_changed_ = false;
         }
 
         if (display_on_change_)
@@ -151,7 +154,6 @@ inline void GraphManager::publish_microros_graph()
             std::cout << "Updated uros Graph: graph changed" << std::endl;
             std::cout << graphCache_ << std::endl;
         }
-        graph_changed_ = false;
 
         micro_ros_msgs::msg::Graph graph_message;
 
@@ -320,11 +322,10 @@ void GraphManager::add_participant(
         if (it == micro_ros_graph_datawriters_.end())
         {
             // Create datawriter
-            std::unique_ptr<eprosima::fastdds::dds::DataWriter> datawriter;
-            datawriter.reset(publisher_->create_datawriter(ros_discovery_topic_.get(), datawriter_qos_));
+            eprosima::fastdds::dds::DataWriter * datawriter = publisher_->create_datawriter(ros_discovery_topic_.get(), datawriter_qos_);
 
             it = micro_ros_graph_datawriters_.insert(
-                std::make_pair(participant, std::move(datawriter))).first;
+                std::make_pair(participant, datawriter)).first;
         }
 
         it->second->write(static_cast<void *>(&info));
@@ -344,8 +345,9 @@ void GraphManager::remove_participant(
         rmw_dds_common::convert_gid_to_msg(&gid, &info.gid);
         auto it = micro_ros_graph_datawriters_.find(participant);
         it->second->write(static_cast<void *>(&info));
+        publisher_->delete_datawriter(it->second);
+        micro_ros_graph_datawriters_.erase(participant);
     }
-    micro_ros_graph_datawriters_.erase(participant);
 }
 
 void GraphManager::add_datawriter(

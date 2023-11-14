@@ -1,3 +1,26 @@
+## micro_ros_agent (humble) - 3.0.5-1
+
+The packages in the `micro_ros_agent` repository were released into the `humble` distro by running `/usr/bin/bloom-release --rosdistro humble micro_ros_agent` on `Tue, 14 Nov 2023 12:33:23 -0000`
+
+The `micro_ros_agent` package was released.
+
+Version of package(s) in repository `micro_ros_agent`:
+
+- upstream repository: https://github.com/micro-ROS/micro-ROS-Agent
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `3.0.4-2`
+- new version: `3.0.5-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.22.2`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## micro_ros_agent (humble) - 3.0.4-1
 
 The packages in the `micro_ros_agent` repository were released into the `humble` distro by running `/usr/bin/bloom-release --rosdistro humble micro_ros_agent` on `Mon, 19 Dec 2022 17:41:31 -0000`

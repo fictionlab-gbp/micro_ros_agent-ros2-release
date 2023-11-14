@@ -2,6 +2,9 @@
 Changelog for package micro-ros_agent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.0.5 (2023-06-06)
+------------------
+
 3.0.4 (2022-09-28)
 ------------------
 * Fix Datawriter destruction (`#169 <https://github.com/micro-ROS/micro-ROS-Agent/issues/169>`_)

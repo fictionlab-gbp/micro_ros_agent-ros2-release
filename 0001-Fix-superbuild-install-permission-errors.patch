@@ -1,4 +1,4 @@
-From cb5428a51240178c52532c6def4ae395a41e04ac Mon Sep 17 00:00:00 2001
+From 6ff49da6a534d73aa7a3aa52bd2196426a6d2680 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?B=C5=82a=C5=BCej=20Sowa?= <bsowa123@gmail.com>
 Date: Mon, 19 Dec 2022 17:56:36 +0000
 Subject: [PATCH] Fix superbuild install permission errors

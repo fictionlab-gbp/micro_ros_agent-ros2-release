@@ -2,7 +2,7 @@
 Changelog for package micro-ros_agent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4.0.3 (2023-06-06)
+5.0.0 (2023-06-06)
 ------------------
 * Add empty type key hash to GraphCache (`#189 <https://github.com/micro-ROS/micro-ROS-Agent/issues/189>`_)
 * Contributors: Antonio Cuadros

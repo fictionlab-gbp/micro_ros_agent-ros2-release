@@ -1,0 +1,12 @@
+Source: ros-iron-micro-ros-agent
+Section: misc
+Priority: optional
+Maintainer: Pablo Garrido <pablogarrido@eprosima.com>
+Build-Depends: debhelper (>= 9.0.0), ros-iron-ament-cmake, ros-iron-ament-cmake-gtest <!nocheck>, ros-iron-ament-lint-auto <!nocheck>, ros-iron-ament-lint-common <!nocheck>, ros-iron-builtin-interfaces <!nocheck>, ros-iron-micro-ros-msgs, ros-iron-rcutils, ros-iron-rmw, ros-iron-rmw-dds-common, ros-iron-rmw-fastrtps-shared-cpp, ros-iron-rosidl-default-generators <!nocheck>, ros-iron-rosidl-typesupport-fastrtps-cpp <!nocheck>, ros-iron-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-iron-micro-ros-agent
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-iron-micro-ros-msgs, ros-iron-rcutils, ros-iron-rmw, ros-iron-rmw-dds-common, ros-iron-rmw-fastrtps-shared-cpp, ros-iron-ros-workspace
+Description: micro-ROS Agent package

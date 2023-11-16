@@ -1,4 +1,4 @@
-From 0210c1f8b7d7903ec834fdd61206b23f888f86f2 Mon Sep 17 00:00:00 2001
+From d7fabd76f6215158e9ac27a6ff0cad0e145a342f Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?B=C5=82a=C5=BCej=20Sowa?= <bsowa123@gmail.com>
 Date: Tue, 14 Nov 2023 12:26:07 +0000
 Subject: [PATCH 2/2] Always add xrce agent to superbuild

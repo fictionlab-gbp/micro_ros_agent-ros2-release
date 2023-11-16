@@ -19,9 +19,9 @@ unset(_deps)
 enable_language(C)
 enable_language(CXX)
 
-unset(xrceagent_DIR CACHE)
-find_package(xrceagent 2 EXACT QUIET)
-if(NOT xrceagent_FOUND)
+# unset(xrceagent_DIR CACHE)
+# find_package(xrceagent 2 EXACT QUIET)
+# if(NOT xrceagent_FOUND)
     ExternalProject_Add(xrceagent
             GIT_REPOSITORY
                 https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
@@ -30,7 +30,7 @@ if(NOT xrceagent_FOUND)
             PREFIX
                 ${PROJECT_BINARY_DIR}/agent
             INSTALL_DIR
-                ${CMAKE_INSTALL_PREFIX}
+                ${PROJECT_BINARY_DIR}/temp_install
             CMAKE_CACHE_ARGS
                 -DCMAKE_CXX_COMPILER:FILEPATH=${CMAKE_CXX_COMPILER}
                 -DCMAKE_C_COMPILER:FILEPATH=${CMAKE_C_COMPILER}
@@ -51,7 +51,7 @@ if(NOT xrceagent_FOUND)
                 -DUAGENT_BUILD_EXECUTABLE:BOOL=OFF
                 -DUAGENT_ISOLATED_INSTALL:BOOL=OFF
             )
-endif()
+# endif()
 
 # Main project.
 ExternalProject_Add(micro_ros_agent

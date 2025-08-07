@@ -56,6 +56,7 @@ add_executable(${PROJECT_NAME}
   src/agent/graph_manager/graph_manager.cpp
   src/agent/graph_manager/graph_typesupport.cpp
   src/agent/utils/demangle.cpp
+  src/agent/utils/namespace.cpp
   )
 
 target_include_directories(${PROJECT_NAME}

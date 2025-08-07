@@ -40,7 +40,7 @@ tracks:
       :{release_inc} --os-name fedora
     - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
       :{release_inc} --os-name rhel
-    devel_branch: humble
+    devel_branch: humble-fictionlab
     last_version: 3.0.5
     name: upstream
     patches: null
@@ -49,7 +49,7 @@ tracks:
     release_tag: :{version}
     ros_distro: humble
     vcs_type: git
-    vcs_uri: https://github.com/micro-ROS/micro-ROS-Agent
+    vcs_uri: https://github.com/fictionlab/micro-ROS-Agent.git
     version: :{auto}
   iron:
     actions:

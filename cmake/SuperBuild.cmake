@@ -24,9 +24,9 @@ enable_language(CXX)
 # if(NOT xrceagent_FOUND)
     ExternalProject_Add(xrceagent
             GIT_REPOSITORY
-                https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+                https://github.com/fictionlab/Micro-XRCE-DDS-Agent.git
             GIT_TAG
-                ros2
+                v2.4.2-fictionlab1
             PREFIX
                 ${PROJECT_BINARY_DIR}/agent
             INSTALL_DIR

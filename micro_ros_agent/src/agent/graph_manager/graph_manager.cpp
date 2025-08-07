@@ -16,6 +16,7 @@
 #define _UROS_AGENT_GRAPH_MANAGER_CPP
 
 #include <agent/graph_manager/graph_manager.hpp>
+#include <agent/utils/namespace.hpp>
 
 #include <memory>
 #include <string>
@@ -26,10 +27,11 @@ namespace uros {
 namespace agent {
 namespace graph_manager {
 
-GraphManager::GraphManager(eprosima::fastdds::dds::DomainId_t domain_id)
+GraphManager::GraphManager(eprosima::fastdds::dds::DomainId_t domain_id, const std::string& namespace_prefix)
     : domain_id_(domain_id)
     , graph_changed_(false)
     , display_on_change_(false)
+    , namespace_prefix_(namespace_prefix)
     , mtx_()
     , cv_()
     , graphCache_()
@@ -588,6 +590,11 @@ void GraphManager::get_name_and_namespace(
     {
         node_name = participant_name;
         node_namespace = "/";
+    }
+
+    if (!namespace_prefix_.empty() && namespace_prefix_ != "/")
+    {
+        node_namespace = utils::Namespace::apply_namespace_to_node(node_namespace, namespace_prefix_);
     }
 }
 

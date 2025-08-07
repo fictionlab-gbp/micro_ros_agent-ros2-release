@@ -81,7 +81,7 @@ public:
     /**
      * @brief   Default constructor.
      */
-    GraphManager(eprosima::fastdds::dds::DomainId_t domain_id);
+    GraphManager(eprosima::fastdds::dds::DomainId_t domain_id, const std::string& namespace_prefix = "");
 
     /**
      * @brief   Default destructor.
@@ -283,6 +283,7 @@ private:
     eprosima::fastdds::dds::DomainId_t domain_id_;
     bool graph_changed_;
     bool display_on_change_;
+    std::string namespace_prefix_;
     std::thread microros_graph_publisher_;
     std::mutex mtx_;
     std::condition_variable cv_;

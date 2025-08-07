@@ -1,0 +1,12 @@
+Source: ros-jazzy-micro-ros-agent
+Section: misc
+Priority: optional
+Maintainer: Pablo Garrido <pablogarrido@eprosima.com>
+Build-Depends: debhelper (>= 9.0.0), ros-jazzy-ament-cmake, ros-jazzy-ament-cmake-gtest <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-builtin-interfaces <!nocheck>, ros-jazzy-micro-ros-msgs, ros-jazzy-rcutils, ros-jazzy-rmw, ros-jazzy-rmw-dds-common, ros-jazzy-rmw-fastrtps-shared-cpp, ros-jazzy-rosidl-default-generators <!nocheck>, ros-jazzy-rosidl-typesupport-fastrtps-cpp <!nocheck>, ros-jazzy-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-micro-ros-agent
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-micro-ros-msgs, ros-jazzy-rcutils, ros-jazzy-rmw, ros-jazzy-rmw-dds-common, ros-jazzy-rmw-fastrtps-shared-cpp, ros-jazzy-ros-workspace
+Description: micro-ROS Agent package

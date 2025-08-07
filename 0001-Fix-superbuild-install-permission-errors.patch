@@ -1,4 +1,4 @@
-From 6ff49da6a534d73aa7a3aa52bd2196426a6d2680 Mon Sep 17 00:00:00 2001
+From 6972c05657ad2efbc40dbbdeb3a2c87c03e7b563 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?B=C5=82a=C5=BCej=20Sowa?= <bsowa123@gmail.com>
 Date: Mon, 19 Dec 2022 17:56:36 +0000
 Subject: [PATCH 1/2] Fix superbuild install permission errors
@@ -52,5 +52,5 @@ index bead827..a3a8aff 100644
                  -DCMAKE_CXX_COMPILER:FILEPATH=${CMAKE_CXX_COMPILER}
                  -DCMAKE_C_COMPILER:FILEPATH=${CMAKE_C_COMPILER}
 -- 
-2.34.1
+2.49.0
 

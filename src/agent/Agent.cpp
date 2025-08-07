@@ -16,6 +16,7 @@
 #define _UROS_AGENT_AGENT_CPP
 
 #include <agent/Agent.hpp>
+#include <agent/utils/namespace.hpp>
 
 #include <utility>
 #include <memory>
@@ -32,6 +33,23 @@ bool Agent::create(
         int argc,
         char** argv)
 {
+    for (int i = 1; i < argc - 1; ++i)
+    {
+        if (strcmp(argv[i], "-n") == 0 || strcmp(argv[i], "--namespace-prefix") == 0)
+        {
+            namespace_prefix_ = std::string(argv[i + 1]);
+            if (namespace_prefix_.empty() || namespace_prefix_[0] != '/')
+            {
+                namespace_prefix_ = "/" + namespace_prefix_;
+            }
+            if (namespace_prefix_.length() > 1 && namespace_prefix_.back() == '/')
+            {
+                namespace_prefix_.pop_back();
+            }
+            break;
+        }
+    }
+
     bool result = xrce_dds_agent_instance_.create(argc, argv);
     if (result)
     {
@@ -193,6 +211,23 @@ bool Agent::create(
             std::move(on_create_requester));
 
         /**
+         * Add PRE_CREATE_TOPIC callback.
+         */
+        std::function<void (
+            const eprosima::fastdds::dds::DomainParticipant *,
+            eprosima::fastrtps::TopicAttributes *)> pre_create_topic
+            ([&](const eprosima::fastdds::dds::DomainParticipant *participant,
+                  eprosima::fastrtps::TopicAttributes *attrs) -> void
+            {
+                (void)participant;
+                attrs->topicName = utils::Namespace::apply_namespace_to_topic(attrs->getTopicName().c_str(), namespace_prefix_);
+            });
+        xrce_dds_agent_instance_.add_middleware_callback(
+            eprosima::uxr::Middleware::Kind::FASTDDS,
+            eprosima::uxr::middleware::CallbackKind::PRE_CREATE_TOPIC,
+            std::move(pre_create_topic));
+
+        /**
          * Add DELETE_REQUESTER callback.
          */
         std::function<void (
@@ -302,7 +337,7 @@ auto it = graph_manager_map_.find(domain_id);
         return graph_manager_map_.insert(
             std::make_pair(
                 domain_id,
-                std::make_shared<graph_manager::GraphManager>(domain_id)
+                std::make_shared<graph_manager::GraphManager>(domain_id, namespace_prefix_)
             )
         ).first->second;
     }

@@ -2,35 +2,30 @@
 Changelog for package micro-ros_agent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-15.0.0 (2025-08-07)
+13.0.0 (2025-08-07)
 -------------------
+* Use backported version of Micro XRCE-DDS agent
 * Add custom namespacing to bridged ROS interfaces (`#1 <https://github.com/fictionlab/micro-ROS-Agent/issues/1>`_)
-* Contributors: Jan Hernas
+* Fix Micro XRCE-DDS Agent tag (`#241 <https://github.com/fictionlab/micro-ROS-Agent/issues/241>`_)
+* Contributors: Błażej Sowa, Pablo Garrido
 
-5.0.2 (2024-05-31)
+3.0.6 (2024-01-29)
 ------------------
-* Jazzy Release
-* Bump Micro XRCE-DDS Agent (`#226 <https://github.com/micro-ROS/micro-ROS-Agent/issues/226>`_)
+* Fix thread include (backport `#216 <https://github.com/micro-ROS/micro-ROS-Agent/issues/216>`_) (`#217 <https://github.com/micro-ROS/micro-ROS-Agent/issues/217>`_)
 
-5.0.1 (2024-01-29)
+3.0.5 (2023-06-06)
 ------------------
-* Fix thread include (`#216 <https://github.com/micro-ROS/micro-ROS-Agent/issues/216>`_) (`#218 <https://github.com/micro-ROS/micro-ROS-Agent/issues/218>`_)
 
-5.0.0 (2023-06-06)
+3.0.4 (2022-09-28)
 ------------------
-* Add empty type key hash to GraphCache (`#189 <https://github.com/micro-ROS/micro-ROS-Agent/issues/189>`_)
-* Contributors: Antonio Cuadros
+* Fix Datawriter destruction (`#169 <https://github.com/micro-ROS/micro-ROS-Agent/issues/169>`_)
+* Synchronise predicate (`#160 <https://github.com/micro-ROS/micro-ROS-Agent/issues/160>`_)
 
-4.0.2 (2022-09-28)
+3.0.3 (2022-06-13)
 ------------------
-* Fix Datawriter destruction (`#169 <https://github.com/micro-ROS/micro-ROS-Agent/issues/169>`_) (`#170 <https://github.com/micro-ROS/micro-ROS-Agent/issues/170>`_)
-* Synchronise predicate (`#160 <https://github.com/micro-ROS/micro-ROS-Agent/issues/160>`_) (`#165 <https://github.com/micro-ROS/micro-ROS-Agent/issues/165>`_)
+* Fix memory leak in graph manager (`#147 <https://github.com/micro-ROS/micro-ROS-Agent/issues/147>`_)
 
-4.0.1 (2022-06-13)
-------------------
-* Fix memory leak in graph manager (`#147 <https://github.com/micro-ROS/micro-ROS-Agent/issues/147>`_) (`#148 <https://github.com/micro-ROS/micro-ROS-Agent/issues/148>`_)
-
-4.0.0 (2022-05-25)
+3.0.2 (2022-05-25)
 ------------------
 
 3.0.1 (2022-03-25)

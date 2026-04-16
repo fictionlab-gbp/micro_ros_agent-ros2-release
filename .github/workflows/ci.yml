@@ -3,25 +3,25 @@ name: CI micro-ROS Agent
 on:
     push:
       branches:
-        - 'humble-fictionlab'
+        - 'jazzy-fictionlab'
     pull_request:
       branches:
-        - 'humble-fictionlab'
+        - 'jazzy-fictionlab'
 
 jobs:
 
     microros_agent_ci:
-      runs-on: ubuntu-latest
+      runs-on: ${{ matrix.os }}
       strategy:
         fail-fast: false
         matrix:
-          os: [ ubuntu-20.04 ]
-          ros_distribution: [ humble ]
+          os: [ ubuntu-latest ]
+          ros_distribution: [ jazzy ]
           include:
-            - docker_image: ubuntu:jammy
-              ros_distribution: humble
+            - docker_image: ubuntu:24.04
+              ros_distribution: jazzy
       container:
-        image: ubuntu:jammy
+        image: ${{ matrix.docker_image }}
       steps:
       - uses: actions/checkout@v4
       - uses: ros-tooling/setup-ros@0.7.13

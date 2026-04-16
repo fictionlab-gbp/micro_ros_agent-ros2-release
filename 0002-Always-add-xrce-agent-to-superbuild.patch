@@ -1,4 +1,4 @@
-From 5c8d4c95aa26a1e09543777da41683afb3ec516d Mon Sep 17 00:00:00 2001
+From a31e44c2e664060a90da002ea1603b0be2336cc7 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?B=C5=82a=C5=BCej=20Sowa?= <bsowa123@gmail.com>
 Date: Tue, 14 Nov 2023 12:26:07 +0000
 Subject: [PATCH 2/2] Always add xrce agent to superbuild
@@ -8,7 +8,7 @@ Subject: [PATCH 2/2] Always add xrce agent to superbuild
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/cmake/SuperBuild.cmake b/cmake/SuperBuild.cmake
-index cd9f28d..a293913 100644
+index 7d247ec..2675232 100644
 --- a/cmake/SuperBuild.cmake
 +++ b/cmake/SuperBuild.cmake
 @@ -19,9 +19,9 @@ unset(_deps)
@@ -23,7 +23,7 @@ index cd9f28d..a293913 100644
 +# if(NOT xrceagent_FOUND)
      ExternalProject_Add(xrceagent
              GIT_REPOSITORY
-                 https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+                 https://github.com/fictionlab/Micro-XRCE-DDS-Agent.git
 @@ -51,7 +51,7 @@ if(NOT xrceagent_FOUND)
                  -DUAGENT_BUILD_EXECUTABLE:BOOL=OFF
                  -DUAGENT_ISOLATED_INSTALL:BOOL=OFF
@@ -34,5 +34,5 @@ index cd9f28d..a293913 100644
  # Main project.
  ExternalProject_Add(micro_ros_agent
 -- 
-2.49.0
+2.51.2
 

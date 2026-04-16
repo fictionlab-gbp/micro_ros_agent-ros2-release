@@ -1,4 +1,4 @@
-From f3f5b26db5f74d4d425b56e7dc006ac142dae422 Mon Sep 17 00:00:00 2001
+From 221b175f81458d97ec81b3718c77c23bf4884d35 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?B=C5=82a=C5=BCej=20Sowa?= <bsowa123@gmail.com>
 Date: Mon, 19 Dec 2022 17:56:36 +0000
 Subject: [PATCH 1/2] Fix superbuild install permission errors
@@ -9,7 +9,7 @@ Subject: [PATCH 1/2] Fix superbuild install permission errors
  2 files changed, 12 insertions(+), 2 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 6706022..9b13356 100644
+index b5dc8b9..8cf08ad 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -31,7 +31,7 @@ else()
@@ -21,7 +21,7 @@ index 6706022..9b13356 100644
  find_package(rosidl_cmake REQUIRED)
  find_package(fastcdr REQUIRED)
  find_package(fastrtps REQUIRED)
-@@ -129,6 +129,16 @@ install(
+@@ -130,6 +130,16 @@ install(
      share/${PROJECT_NAME}
    )
  
@@ -39,7 +39,7 @@ index 6706022..9b13356 100644
    set(_OUTPUT_PATH "${CMAKE_CURRENT_BINARY_DIR}/python")
  
 diff --git a/cmake/SuperBuild.cmake b/cmake/SuperBuild.cmake
-index defffa1..cd9f28d 100644
+index 671dd0f..7d247ec 100644
 --- a/cmake/SuperBuild.cmake
 +++ b/cmake/SuperBuild.cmake
 @@ -30,7 +30,7 @@ if(NOT xrceagent_FOUND)
@@ -52,5 +52,5 @@ index defffa1..cd9f28d 100644
                  -DCMAKE_CXX_COMPILER:FILEPATH=${CMAKE_CXX_COMPILER}
                  -DCMAKE_C_COMPILER:FILEPATH=${CMAKE_C_COMPILER}
 -- 
-2.49.0
+2.51.2
 

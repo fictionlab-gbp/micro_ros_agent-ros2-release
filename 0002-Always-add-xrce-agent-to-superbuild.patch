@@ -1,4 +1,4 @@
-From a31e44c2e664060a90da002ea1603b0be2336cc7 Mon Sep 17 00:00:00 2001
+From ff5a3f71f750bfbf04c8cfd7e5ce7d6ddebd1a24 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?B=C5=82a=C5=BCej=20Sowa?= <bsowa123@gmail.com>
 Date: Tue, 14 Nov 2023 12:26:07 +0000
 Subject: [PATCH 2/2] Always add xrce agent to superbuild
@@ -34,5 +34,5 @@ index 7d247ec..2675232 100644
  # Main project.
  ExternalProject_Add(micro_ros_agent
 -- 
-2.51.2
+2.54.0
 

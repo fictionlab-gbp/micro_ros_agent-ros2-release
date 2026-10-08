@@ -1,3 +1,26 @@
+## micro_ros_agent (jazzy) - 15.0.0-3
+
+The packages in the `micro_ros_agent` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release --rosdistro jazzy micro_ros_agent` on `Thu, 08 Oct 2026 13:09:46 -0000`
+
+The `micro_ros_agent` package was released.
+
+Version of package(s) in repository `micro_ros_agent`:
+
+- upstream repository: https://github.com/fictionlab/micro-ROS-Agent.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `15.0.0-2`
+- new version: `15.0.0-3`
+
+Versions of tools used:
+
+- bloom version: `0.14.4`
+- catkin_pkg version: `1.1.1`
+- rosdep version: `0.27.0`
+- rosdistro version: `1.1.0`
+- vcstools version: `0.1.42`
+
+
 ## micro_ros_agent (jazzy) - 15.0.0-2
 
 The packages in the `micro_ros_agent` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release --rosdistro jazzy micro_ros_agent` on `Thu, 16 Apr 2026 14:55:59 -0000`
